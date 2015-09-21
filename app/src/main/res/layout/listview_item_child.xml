@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.ccjoin.jmumall.ui.ReceiptActivity">
+
+    <RelativeLayout
+        android:id="@+id/layout_goods"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#CCCCCC"
+        android:padding="3dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/layout_option_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            >
+
+            <CheckBox
+                android:id="@+id/checkbox_child_goods"
+                style="@style/custom_checkbox"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:checked="false"
+                android:gravity="center"
+                android:visibility="visible"
+                />
+
+            <TextView
+                android:id="@+id/textview_invalid_goods"
+                android:layout_width="47dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="失\n效"
+                android:visibility="gone"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_goods_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/layout_option_status"
+            >
+
+            <ImageView
+                android:id="@+id/iv_goods_image"
+                android:layout_width="105dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:background="@android:color/holo_red_dark"
+                android:src="@mipmap/ic_launcher"
+                />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_select_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/layout_goods_image"
+            android:padding="5dp"
+            >
+
+            <TextView
+                android:id="@+id/textView_goods_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:maxLines="2"
+                android:singleLine="true"
+                android:text="雨润冻猪带皮大五花雨润冻猪带皮大五花雨润冻猪带皮大五花..."
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                />
+
+            <LinearLayout
+                android:id="@+id/layout_goods_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView_goods_description"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/textView_goods_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥135.32"
+                    android:textColor="#ff6600"
+                    android:textSize="16sp"
+                    />
+
+                <TextView
+                    android:id="@+id/textview_expired_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+
+                    android:text="￥568"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_input_number"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/layout_goods_price"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="2"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:text="2"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:text="+"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_input_number"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="最低起批量:"
+                    />
+
+                <TextView
+                    android:id="@+id/textview_minimum_starting_mass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15kg"
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_goods_holder"
+        android:layout_width="70dp"
+        android:layout_height="128dp"
+        android:layout_alignBottom="@+id/layout_goods"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/holo_red_light"
+        android:clickable="true"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/tv_delete_goods"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="@android:color/white"
+            />
+    </RelativeLayout>
+</RelativeLayout>
